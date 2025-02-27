@@ -1,8 +1,6 @@
-
 public class Array {
 
 	public static void main(String[] args) {
-		
 		
 		// Array di interi
 		int[] etaStudenti = new int[]{9, 29, 11, 12, 43, 14, 18};
@@ -31,7 +29,5 @@ public class Array {
 		System.out.println("Età media studenti: " + etaMedia);
 		System.out.println("Numero maggiorenni: " + maggiorenni);
 		System.out.println("Numero minorenni: " + minorenni);
-
 	}
-
 }
