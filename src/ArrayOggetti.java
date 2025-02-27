@@ -16,6 +16,9 @@ public class ArrayOggetti {
             System.out.println("Inserisci il cognome della persona " + (i + 1) + ":");
             String cognome = scanner.nextLine();
             
+            System.out.println("Inserisci l'email della persona " + (i + 1) + ":");
+            String email = scanner.nextLine();           
+            
             System.out.println("Inserisci l'età della persona " + (i + 1) + ":");
             int eta;
             
@@ -28,14 +31,18 @@ public class ArrayOggetti {
                 }
             }
 
-            persone[i] = new Persona(nome, cognome, eta);
+            persone[i] = new Persona(nome, cognome, email, eta);
         }
+        
+        getInfo(n, persone); // Invoca il metodo per stampare le info delle persone
 
+        scanner.close(); // Chiude lo scanner per evitare memory leaks
+    }
+    
+    public static void getInfo(int n, Persona[] persone) {
         System.out.println("Le persone inserite sono:");
         for (int i = 0; i < n; i++) {
         	System.out.println("Persona " + (i + 1) + ": " + persone[i].getNome() + " " + persone[i].getCognome() + " " + persone[i].getEta());
         }
-
-        scanner.close(); // Chiude lo scanner per evitare memory leaks
     }
 }
