@@ -5,7 +5,7 @@ public class Azienda {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        Dipendente[] dipendenti = new Dipendente[2];
+        Dipendente[] dipendenti = new Dipendente[1];
         int count = 0;
 
         while (true) {
@@ -31,7 +31,15 @@ public class Azienda {
                 	
                     if (count == dipendenti.length) {
                         Dipendente[] nuovoArray = new Dipendente[dipendenti.length * 2];
+                        
+                        // Questa istruzione copia tutti gli elementi dal vecchio array dipendenti a partire dall'indice 0, 
+                        // fino alla lunghezza totale, dentro il nuovo array nuovoArray, a partire anch'esso dall'indice 0. 
+                        // In questo modo, tutti i dipendenti già inseriti vengono preservati.
                         System.arraycopy(dipendenti, 0, nuovoArray, 0, dipendenti.length);
+                        
+                        // Il vecchio array dipendenti viene punta al nuovo array nuovoArray. Questo significa che 
+                        // da questo momento in poi tutte le operazioni (come aggiungere nuovi dipendenti) verranno 
+                        // effettuate su questo array ampliato.
                         dipendenti = nuovoArray;
                     }
                     
@@ -67,7 +75,6 @@ public class Azienda {
     }
     
     public static void visualizzaDipendenti(int count, Dipendente[] dipendenti) {
-    	
     	if (count == 0) {
     		System.out.println("\nNessun dipendente inserito!");
             return;
